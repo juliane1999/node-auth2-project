@@ -54,15 +54,15 @@ router.post("/login", checkUsernameExists, (req, res, next) => {
     token,
   })
  } else {
-    next({status:401, message:'Invalid crendentials'})
+    next({status:401, message:'Invalid credentials'})
   }
 });
 
 function makeToken(user) {
   const payload = {
     subject:user.user_id,
-    role_name: user.role_name,
     username: user.username,
+    role_name: user.role_name,
   }
   const options = {
     expiresIn:'1d'
