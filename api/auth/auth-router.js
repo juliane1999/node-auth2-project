@@ -3,7 +3,6 @@ const { checkUsernameExists, validateRoleName } = require('./auth-middleware');
 const { JWT_SECRET } = require("../secrets"); // use this secret!
 const bcrypt = require('bcryptjs')
 const User = require('../users/users-model');
-// const { default: jwtDecode } = require("jwt-decode");
 const jwt = require('jsonwebtoken');
 
 router.post("/register", validateRoleName, (req, res, next) => {
